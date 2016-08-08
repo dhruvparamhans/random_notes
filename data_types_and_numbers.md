@@ -53,7 +53,7 @@ are exist: this is carry-flag generated after proceeding of lower 4 bits. The fl
 
 (This obscure code converts number in 0..15 range into ASCII character '0'..'9', 'A'..'F'.)
 
-The fact of easy conversion had led to popularity of Peter Abel "IBM PC assembly language and programming" book.
+The fact of easy conversion had led to popularity of [Peter Abel *IBM PC assembly language and programming* (1987)] book.
 But aside of this book, the author of these notes never seen BCD numbers in practice, except for
 [magic numbers](https://github.com/dennis714/RE-for-beginners/blob/5fe2c076ace7ac22bba6facdcf06600a0426fba6/digging_into_code/constants.tex) like when someone's birthday is encoded like 0x19861115 -- this is indeed packed BCD number.
 
@@ -234,6 +234,9 @@ Number increasing from 0, like: 0, 1, 2, 3 ... -- a good chance this is loop cou
 There are numbers [so large](https://en.wikipedia.org/wiki/Large_numbers),
 that there is even special notation for it exist ([Knuth's up-arrow notation](https://en.wikipedia.org/wiki/Knuth%27s_up-arrow_notation)).
 These numbers are so large so these are not practical for engineering, science and mathematics.
+
+Almost all engineers and scientists are happy with IEEE 754 double precision floating point, which has maximal
+value around 10^308.
 
 In fact, upper bound in practical computing is much, much lower.
 If you get [source code of UNIX v6 for PDP-11](http://minnie.tuhs.org/Archive/PDP-11/Distributions/research/Dennis_v6/),
