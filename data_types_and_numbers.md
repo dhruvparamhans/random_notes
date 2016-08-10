@@ -123,7 +123,7 @@ Values like 0xFFFFFFFF (-1) are used often, mostly as error codes.
 
 # Word
 
-*Word* word is somewhat ambiguous term and usually denotes a data type fitting in General Purpose Register (GPR).
+*Word* word is somewhat ambiguous term and usually denotes a data type fitting in *General Purpose Register (GPR)*.
 Bytes are practical for characters, but impractical for other arithmetical calculations.
 
 Hence, many computers has GPRs with width of 16, 32 or 64 bits.
@@ -131,7 +131,7 @@ Even 8-bit CPUs like 8080 and Z80 offers to work with 8-bit register pairs, each
 (*BC*, *DE*, *HL*, etc).
 Z80 has some capability to work with register pairs, making it as some kind of 16-bit CPU emulation.
 
-In general, if a CPU marketed as "n-bit CPU", this usually means it has n-bit GPRs.
+In general, if a CPU marketed as "n-bit CPU", this usually means it has n-bit *GPRs*.
 
 Hard to believe, but there was a time when hard disks and RAM modules were marketed as having *n* kilo-words instead of
 *b* kilobytes/megabytes.
@@ -164,9 +164,15 @@ Even if you use it as a container for loop counter in *0..99* range.
 *Double word* is 32-bit, *quad word* is 64-bit.
 That's why 16-bit words are declared using *DW* in x86 assembly, 32-bit ones using *DD* and 64-bit ones using *DQ*.
 
-*Word* is 32-bit for ARM, MIPS, etc., 16-bit data types are called *half-word* there.
+*Word* is 32-bit for ARM, MIPS, etc., 16-bit data types are called *half-word* there. Hence, *double word* on 32-bit RISC
+is 64-bit data type.
 
 *GDB* has the following terminology: *halfword* for 16-bit, *word* for 32-bit and *giant word* for 64-bit.
+
+16-bit C/C++ environment on PDP-11 MS-DOS has *long* data type with width of 32 bits, perhaps, they meant *long word* or
+*long int*?
+
+32-bit C/C++ environment has *long long* data type with width of 64 bits.
 
 Now you see why the *word* word is ambiguous.
 
@@ -260,6 +266,17 @@ Given that, if you see unusually large 32-bit value like 0x87654321, this is a g
 
 Almost same story for 64-bit values.
 
+### ... so 16-bit *int* is enough for almost everything?
+
+It's interesting to note: Michael Abrash in
+[*Graphics Programming Black Book*](https://github.com/jagregory/abrash-black-book) (chapter 13)
+says there are plenty cases in which 16-bit values are just enough.
+In a meantime, he has a pity that 80386 and 80486 CPUs has so little available registers, so he offers to put
+two 16-bit values into one 32-bit register and then to rotate it using ROR (on 80386) or BSWAP (on 80486) instruction.
+
+That reminds us Z80 with alternate pack of registers (suffixed with apostrophe), to which CPU can switch
+(and then switch back) using EXX instruction.
+
 ## Size of buffer
 
 When a programmer need to declare a size of some buffer, values like 2^x are usually used (512 bytes, 1024, etc).
@@ -290,6 +307,9 @@ this probably sliding address of some element of array.
 
 It's important to know that win32 doesn't use addresses below 0x1000 (TODO), so if you see some number below this value,
 this cannot be an address.
+
+Anyway, many debuggers can show you if the value in a register can be an address to something.
+OllyDbg can also show an ASCII string if the value is an address of it.
 
 ## Bit field
 
