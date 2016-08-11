@@ -190,6 +190,17 @@ for these types: *byte/wyde/tetrabyte/octabyte*.
 But these names are less popular than clear terms with inclusion of *u* (*unsigned*) character 
 and number right into the type name.
 
+## Word-oriented computers
+
+Despite the ambiguity of the *word* term, modern computers are still word-oriented: *RAM* and all levels of cache
+are still organized by words (they are marketed using *byte* term, though).
+<!-- TODO word length on intel, etc... -->
+
+Word-aligned RAM/cache access is always cheap, not-aligned may be not.
+
+Effective data structures should always take into consideration lenght of the *word* on the CPU to be executed on.
+Sometimes compiler do this for programmer, sometimes not.
+
 # Address register
 
 For those who fostered on 32-bit and/or 64-bit x86, and/or RISC of 90s like ARM, MIPS, PowerPC, it's natural that
@@ -270,12 +281,14 @@ Almost same story for 64-bit values.
 
 It's interesting to note: Michael Abrash in
 [*Graphics Programming Black Book*](https://github.com/jagregory/abrash-black-book) (chapter 13)
-says there are plenty cases in which 16-bit values are just enough.
+writes there are plenty cases in which 16-bit values are just enough.
 In a meantime, he has a pity that 80386 and 80486 CPUs has so little available registers, so he offers to put
-two 16-bit values into one 32-bit register and then to rotate it using ROR (on 80386) or BSWAP (on 80486) instruction.
+two 16-bit values into one 32-bit register and then to rotate it using
+*ROR reg, 16* (on 80386 and later) (*ROL reg, 16* will also work) or 
+*BSWAP* (on 80486 and later) instruction.
 
 That reminds us Z80 with alternate pack of registers (suffixed with apostrophe), to which CPU can switch
-(and then switch back) using EXX instruction.
+(and then switch back) using *EXX* instruction.
 
 ## Size of buffer
 
