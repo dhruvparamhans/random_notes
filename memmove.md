@@ -4,22 +4,14 @@ The difference between these standard functions is that *memcpy()* blindly copie
 while *memmove()* correctly handles overlapping blocks.
 For example, you need to tug a string two bytes forward:
 
-`|.|.|h|e|l|l|o|...`
-
-->
-
-`|h|e|l|l|o|...`
+`|.|.|h|e|l|l|o|...` -> `|h|e|l|l|o|...`
 
 memcpy() which copies 32-bit or 64-bit words at once, or even SIMD, will obviously fail here, a byte-wise copy routine
 should be used instead.
 
 Now even more complex example, insert two bytes in front of string:
 
-`|h|e|l|l|o|...`
-
-->
-
-`|.|.|h|e|l|l|o|...`
+`|h|e|l|l|o|...` -> `|.|.|h|e|l|l|o|...`
 
 Now even byte-wise memory copy routine will fail, you need to copy bytes starting at the end.
 
