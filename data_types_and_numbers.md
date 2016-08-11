@@ -253,7 +253,7 @@ that there is even special notation for it exist ([Knuth's up-arrow notation](ht
 These numbers are so large so these are not practical for engineering, science and mathematics.
 
 Almost all engineers and scientists are happy with IEEE 754 double precision floating point, which has maximal
-value around 1.8 * 10^308.
+value around 1.8 \* 10^308.
 
 In fact, upper bound in practical computing is much, much lower.
 If you get [source code of UNIX v6 for PDP-11](http://minnie.tuhs.org/Archive/PDP-11/Distributions/research/Dennis_v6/),
