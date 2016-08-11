@@ -37,6 +37,7 @@ Let's shift a lone bit left until it disappears:
 Output is:
 
 	...
+
 	536870912 -536870913
 	1073741824 -1073741825
 	-2147483648 2147483647
