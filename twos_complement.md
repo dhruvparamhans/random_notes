@@ -11,6 +11,7 @@ So you take a *word*, set all bits and get the value:
 	int main()
 	{
 		int val=~0; // change to char to get maximal value for the unsigned 8-bit byte
+		// 0-1 will also work, or just -1
 		printf ("%u\n", val); // %u for unsigned
 	};
 
