@@ -2,8 +2,9 @@
 
 ## Getting maximum number of some *word*
 
-Maximum number in unsigned form is just a number where all bits are set: *0xFF..FF*.
-Do you take a *word*, set all bits and get the value:
+Maximum number in unsigned form is just a number where all bits are set: *0xFF..FF* (this is -1 if the *word* is
+treated as signed integer).
+So you take a *word*, set all bits and get the value:
 
 	#include <stdio.h>
 
