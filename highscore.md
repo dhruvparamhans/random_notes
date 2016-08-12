@@ -160,10 +160,10 @@ The problem can be even much more serious: [Heartbleed bug](https://en.wikipedia
 
 ## Homework
 
-*Block out* has several polycubes (flat/basic/extended), depth and size of are can be configured, etc.
+*Block out* has several polycubes (flat/basic/extended), size of pit can be configured, etc.
 And it seems, for each configuration, *Block out* has its own high score table.
 I've notices that some information is probably stored in *BLSCORE.IDX* file.
-This can be a homework for hardcode *Block out* fans - to understand its structure as well.
+This can be a homework for hardcore *Block out* fans - to understand its structure as well.
 
 The *Block out* files are [here](http://beginners.re/examples/blockout.zip) (including the binary high score files
 I've used in this example).
