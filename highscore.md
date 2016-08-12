@@ -1,4 +1,4 @@
-# High-score file
+# High-score file in Block out and primitive serialization
 
 Many videogames has high-score file, sometimes called "Hall of fame".
 Ancient [Block out](http://www.bestoldgames.net/eng/old-games/blockout.php) game (3D tetris from 1989) isn't exception, here is what we see at the end:
