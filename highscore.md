@@ -141,7 +141,7 @@ And there are 3 entries present.
 But then we see a random noise at the second half of file.
 
 The noise is probably has its origin in uninitialized data.
-Perhaps, *Block out* allocated memory for 10 entries somewhere in memory, where, obviously,
+Perhaps, *Block out* allocated memory for 10 entries somewhere in heap, where, obviously,
 some pseudorandom noise (left from something else) was present.
 Then it set first/second byte, fill 3 entries, and then it never touched 7 entries left, so they are written
 to the file as is.
