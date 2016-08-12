@@ -64,7 +64,7 @@ Now let's write C program to read highscore file:
 		};
 	};
 
-We need GCC *__attribute__ ((aligned (1),packed))* attribute so that all structure fields will be packed on 1-byte boundary.
+We need GCC *((aligned (1),packed))* attribute so that all structure fields will be packed on 1-byte boundary.
 
 Of course it works:
 
