@@ -52,6 +52,8 @@ Example:
 		f(s);
 	};
 
+In short, it works because C has no array boundary checks. Any array is treated as having infinite size.
+
 Problem: after allocation, the whole size of allocated block for structure is unknown (except for memory manager),
 so you can't just replace string with larger string.
 You would still be able to do so if the field would be declared as something like *s[MAX_NAME]*.
