@@ -116,3 +116,5 @@ You just extend your base class (let's call it *Circle*),
 and then you will have *ColoredCircle* and then *FilledColoredCircle*, and so on.
 A current *version* of an object (or, more precisely, current *type*) will be determined using C++ *RTTI*.
 
+So when you see *SizeOfStruct* somewhere in MSDN -- perhaps this structure was extended at least once in past.
+
