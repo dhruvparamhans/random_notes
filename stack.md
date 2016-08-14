@@ -65,7 +65,7 @@ to "Hello!" string. We see its address is also used as third argument to *draw_t
 
 In *f()* we could read all functions arguments and local variables if we know exact stack layout, but it's always
 changed, from compiler to compiler.
-Various optimization levels are affects stack layout greatly.
+Various optimization levels affects stack layout greatly.
 
 But if can somehow detect information we need, we can use it and even modify it.
 As an example, I'll rework *f()* function:
