@@ -67,7 +67,7 @@ In *f()* we could read all functions arguments and local variables if we know ex
 changed, from compiler to compiler.
 Various optimization levels affects stack layout greatly.
 
-But if can somehow detect information we need, we can use it and even modify it.
+But if we can somehow detect information we need, we can use it and even modify it.
 As an example, I'll rework *f()* function:
 
 	void f(char *text)
