@@ -1,0 +1,109 @@
+# Accessing arguments/local variables of caller
+
+From C/C++ basics we know that this is impossible for a function to access arguments of caller function or its
+local variables.
+
+Nevertheless, it's possible using dirty hacks.
+For example:
+
+	#include <stdio.h>
+
+	void f(char *text)
+	{
+		// print stack
+		int *tmp=&text;
+		for (int i=0; i<20; i++)
+		{
+			printf ("0x%x\n", *tmp);
+			tmp++;
+		};
+	};
+
+	void draw_text(int X, int Y, char* text)
+	{
+		f(text);
+
+		printf ("We are going to draw [%s] at %d:%d\n", text, X, Y);
+	};
+
+	int main()
+	{
+		printf ("address of main()=0x%x\n", &main);
+		printf ("address of draw_text()=0x%x\n", &draw_text);
+		draw_text(100, 200, "Hello!");
+	};
+
+On 32-bit Ubuntu 16.04 and GCC 5.4.0, I got this:
+
+	address of main()=0x80484f8
+	address of draw_text()=0x80484cb
+	0x8048645	first argument to f()
+	0x8048628
+	0xbfd8ab98
+	0xb7634590
+	0xb779eddc
+	0xb77e4918
+	0xbfd8aba8
+	0x8048547	return address into the middle of main()
+	0x64		first argument to draw_text()
+	0xc8		second argument to draw_text()
+	0x8048645	third argument to draw_text()
+	0x8048581
+	0xb779d3dc
+	0xbfd8abc0
+	0x0
+	0xb7603637
+	0xb779d000
+	0xb779d000
+	0x0
+	0xb7603637
+
+(Comments are mine)
+
+Since *f()* starting to enumerate stack elements at its first argument, the first stack element is indeed a pointer
+to "Hello!" string. We see its address is also used as third argument to *draw_text()* function.
+
+In *f()* we could read all functions arguments and local variables if we know exact stack layout, but it's always
+changed, from compiler to compiler.
+Various optimization levels are affects stack layout greatly.
+
+But if can somehow detect information we need, we can use it and even modify it.
+As an example, I'll rework *f()* function:
+
+	void f(char *text)
+	{
+		...
+
+		// find 100, 200 values pair and modify the second on
+		tmp=&text;
+		for (int i=0; i<20; i++)
+		{
+			if (*tmp==100 && *(tmp+1)==200)
+			{
+				printf ("found\n");
+				*(tmp+1)=210; // change 200 to 210
+				break;
+			};
+			tmp++;
+		};
+	};
+
+Holy moly, it works:
+
+	found
+	We are going to draw [Hello!] at 100:210
+
+## Summary
+
+It's extremely dirty hack, intended to demonstrate stack internals.
+I never ever seen or heard that anyone used this in a real code.
+But still, this is a good example.
+
+## Homework
+
+The example was compiled without optimization on 32-bit Ubuntu using GCC 5.4.0 and it works.
+But when I turn on *-O3* maximum optimization, it's failed.
+Try to find why.
+
+Use your favorite compiler and OS, try various optimization levels, find if it's works and if it's not, find why.
+

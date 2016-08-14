@@ -135,15 +135,19 @@ In general, if a CPU marketed as "n-bit CPU", this usually means it has n-bit *G
 
 Hard to believe, but there was a time when hard disks and RAM modules were marketed as having *n* kilo-words instead of
 *b* kilobytes/megabytes.
+
 For example, [Apollo Guidance Computer](https://en.wikipedia.org/wiki/Apollo_Guidance_Computer) has 2048 words of RAM.
 This was a 16-bit computer, so there was 4096 bytes of RAM.
+
+[TX-0](https://en.wikipedia.org/wiki/TX-0) had 64K of 18-bit words of magnetic core memory, i.e., 64 kilo-words.
+
 [DECSYSTEM-2060](https://en.wikipedia.org/wiki/DECSYSTEM-20) could have up to 4096 kilowords of "solid state memory"
 (i.e., hard disks, tapes, etc).
 This was 36-bit computer, so this is 18432 kilobytes or ~18 megabytes.
 
 ---
 
-By old standards, *int* in C/C++ is almost always mapped to *word*.
+*int* in C/C++ is almost always mapped to *word*.
 (Except of AMD64 architecture where *int* is still 32-bit one, perhaps, for the reason of better portability).
 
 *int* is 16-bit on PDP-11 and old MS-DOS compilers.
