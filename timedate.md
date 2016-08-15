@@ -169,7 +169,7 @@ is visible and moving.
 When any hand is outside of this area, hand is visible as usual.
 
 Let's take even closer look at the table in Mathematica.
-I copypasted table from the *TIMEDATE.CPL* to a *tbl* file (480 bytes).
+I have copypasted table from the *TIMEDATE.CPL* to a *tbl* file (480 bytes).
 We will take for granted the fact that these are signed values, because half of elements are below zero (0FFFFE0C1h, etc).
 If these values would be unsigned, they would be suspiciously huge.
 
