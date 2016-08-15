@@ -13,10 +13,10 @@ When I open the file (from Windows 7) in Resource Hacker, there are clock faces,
 ![high-score](timedate/reshack.png)
 
 OK, what we know? How to draw a clock hand? All they are started at the middle of circle, ending with its border.
-Hence, we need to calculate coordinates of circle.
+Hence, we need to calculate coordinates of a point on circle's border.
 From school-level mathematics we may remember that we need to use sine/cosine functions to draw circle, or at least
 square root.
-There are no such things in TIMEDATE.CPL, at least at first glance.
+There are no such things in *TIMEDATE.CPL*, at least at first glance.
 But, thanks to Microsoft debugging PDB files, I can find a function named *CAnalogClock::DrawHand()*, which calls
 *Gdiplus::Graphics::DrawLine()* at least twice.
 
@@ -129,8 +129,8 @@ Here is its code:
 	.text:6EB9DCAE                 retn    10h
 	.text:6EB9DCAE ?_DrawHand@CAnalogClock@@AAE?AW4Status@Gdiplus@@PAVGraphics@3@HABUClockHand@@PAVPen@3@@Z endp
 	.text:6EB9DCAE
-	
-We can see that DrawLine() arguments are dependent on result of MulDiv() function and a *table[]* table (name is mine),
+
+We can see that *DrawLine()* arguments are dependent on result of *MulDiv()* function and a *table[]* table (name is mine),
 which has 8-byte elements (look at LEA's second operand).
 
 What is inside of table[]?
@@ -155,10 +155,10 @@ What is inside of table[]?
 
 It's referenced only from *DrawHand()* function at has 120 32-bit words or 60 32-bit pairs... wait, 60?
 Let's take a closer look at these values.
-First of all, I'll zap 6 pairs or 12 32-bit words with zeroes, and then I'll put patched TIMEDATE.CPL
-into C:\WINDOWS\SYSTEM32.
-(You may need to set owner of the TIMEDATE.CPL file to your primary user account, and also, boot in safe mode with command
-prompt so you can copy the file, which is usually locked.)
+First of all, I'll zap 6 pairs or 12 32-bit words with zeroes, and then I'll put patched *TIMEDATE.CPL*
+into *C:\WINDOWS\SYSTEM32*.
+(You may need to set owner of the *TIMEDATE.CPL* file to your primary user account (instead of *TrustedInstaller*),
+and also, boot in safe mode with command prompt so you can copy the file, which is usually locked.)
 
 ![high-score](timedate/6_pairs_zeroed.png)
 
@@ -167,7 +167,7 @@ is visible and moving.
 When any hand is outside of this area, hand is visible as usual.
 
 Let's take even closer look at the table in Mathematica.
-I copypasted table from the TIMEDATE.CPL to a *tbl* file (480 bytes).
+I copypasted table from the *TIMEDATE.CPL* to a *tbl* file (480 bytes).
 We will take for granted the fact that these are signed values, because half of elements are below zero (0FFFFE0C1h, etc).
 If these values would be unsigned, they would be suspiciously huge.
 
@@ -233,7 +233,7 @@ would be drawing at place of 59th second.
 I made the patcher a long time ago, at the very beginning of 2000s, for Windows 2000.
 Hard to believe, it still works for Windows 7, perhaps, the table hasn't been changed since then!
 
-URL
+[Patcher source code](https://github.com/dennis714/random_notes/blob/master/timedate/time_pt.c)
 
 Now I can see all hands goes backwards:
 
