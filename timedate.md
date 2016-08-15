@@ -1,6 +1,7 @@
 # Hacking Windows clock
 
-I've always wanted to do some kind of 1-April prank for my coworkers.
+Sometimes I did some kind of first april prank for my coworkers.
+
 Let's find, if we could do something with Windows clock?
 Can we force to go clock hands backwards?
 
@@ -151,6 +152,7 @@ What is inside of table[]?
 	.text:6EB878C0                 dd 125Eh
 	.text:6EB878C4                 dd 0FFFFE6B8h
 	.text:6EB878C8                 dd 14E9h
+
 	...
 
 It's referenced only from *DrawHand()* function at has 120 32-bit words or 60 32-bit pairs... wait, 60?
