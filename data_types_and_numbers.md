@@ -272,14 +272,14 @@ usage of 64-bit *int* is even rarer.
 I would say, 16-bit numbers in range (0..65535) are probably most used numbers in computing.
 
 Given that, if you see unusually large 32-bit value like 0x87654321, this is a good chance this can be:
-1. this can be still 16-bit number, but signed, between 0xFFFF8000 (-32768) and 0xFFFFFFFF (-1).
+* this can be still 16-bit number, but signed, between 0xFFFF8000 (-32768) and 0xFFFFFFFF (-1).
 [Example](https://github.com/dennis714/random_notes/blob/master/timedate.md).
-2. address (can be checked using memory map feature of debugger);
-3. packed bytes (can be checked visually);
-4. bit flags;
-5. something related to (amateur) cryptography;
-6. magic number;
-7. IEEE 754 floating point number (can also be checked).
+* address (can be checked using memory map feature of debugger);
+* packed bytes (can be checked visually);
+* bit flags;
+* something related to (amateur) cryptography;
+* magic number;
+* IEEE 754 floating point number (can also be checked).
 
 Almost same story for 64-bit values.
 
