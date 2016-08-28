@@ -20,6 +20,15 @@ In other words, this code checks if there are any bit set among lower 12 bits.
 As a side effect, lower 12 bits is always a remainder from division a value by 4096 (because division by 2^n
 is merely a right shift, and shifted (and dropped) bits are bits of remainder).
 
+Same story if you need to check if the number is odd or even:
+
+	if (value&1)
+		// odd
+	else
+		// even
+
+This is merely the same as if to divide by 2 and get remainder.
+
 ## POPCNT instruction
 
 This is population count (AKA Hamming weight).
