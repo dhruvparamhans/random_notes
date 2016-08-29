@@ -202,5 +202,14 @@ Subtraction of 0x20 is the same as ANDing value with ~0x20 (0x..FFDF), but if th
 Again, it works because carry not happened when you add 2^n number and this bit isn't set before.
 
 This property of boolean logic is important, worth understanding and keeping it in mind.
-Sometimes, compiler optimizations uses this, [for example](https://github.com/dennis714/RE-for-beginners/blob/1e35933e1a9f9ca373730e37b8da99085d3faeec/advanced/200_string_trim/x64.tex).
+
+## AND/OR/XOR as MOV
+
+OR reg, 0xFFFFFFFF sets all bits to 1, hence, no matter what was in register before, it will be set to -1.
+OR reg, -1 is shorter than MOV reg, -1, so MSVC uses OR instead the latter,
+[for example](https://github.com/dennis714/RE-for-beginners/blob/1e35933e1a9f9ca373730e37b8da99085d3faeec/advanced/200_string_trim/x64.tex).
+
+Likewise, AND reg, 0 always resets all bits, hence, it acts like MOV reg, 0.
+
+XOR reg, reg, no matter what was in registers, resets all bits, and also acts like MOV reg, 0.
 
