@@ -1,3 +1,5 @@
+(The note below has been copypasted to the [Reverse Engineering for Beginners book](http://beginners.re/))
+
 # Hacking Windows clock
 
 Sometimes I did some kind of first april prank for my coworkers.

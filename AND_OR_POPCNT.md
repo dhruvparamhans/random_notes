@@ -1,3 +1,5 @@
+(The note below has been copypasted to the [Reverse Engineering for Beginners book](http://beginners.re/))
+
 # AND/OR/POPCNT logical operations
 
 ## Checking if a value is on 2^n boundary
@@ -51,7 +53,8 @@ It was a time when 8-bit ASCII wasn't supported by some Internet services, inclu
 Some supported, some others -- not.
 
 It was also a time, when non-Latin writing systems used second half of 8-bit ASCII table to accommodate non-Latin characters.
-There was several popular Cyrillic encodings, but KOI-8R is somewhat unique in comparison with them.
+There was several popular Cyrillic encodings, but KOI-8R (devised by Andrey ``ache'' Chernov)
+is somewhat unique in comparison with them.
 
 This is a KOI8-R table:
 

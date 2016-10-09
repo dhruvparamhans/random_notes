@@ -1,3 +1,5 @@
+(The note below has been copypasted to the [Reverse Engineering for Beginners book](http://beginners.re/))
+
 # Version of C structure
 
 Many Windows programmers have seen this is MSDN:

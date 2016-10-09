@@ -1,3 +1,5 @@
+(The note below has been copypasted to the [Reverse Engineering for Beginners book](http://beginners.re/))
+
 # Sometimes a C structure can be used instead of array
 
 ## Arithmetic mean

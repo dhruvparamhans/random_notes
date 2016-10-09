@@ -1,3 +1,5 @@
+(The note below has been copypasted to the [Reverse Engineering for Beginners book](http://beginners.re/))
+
 # Couple of additions about two's complement form
 
 ## Getting maximum number of some *word*

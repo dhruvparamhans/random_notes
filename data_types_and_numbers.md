@@ -1,3 +1,5 @@
+(The note below has been copypasted to the [Reverse Engineering for Beginners book](http://beginners.re/))
+
 # Integral datatypes
 
 Integral datatype is a type for a value which can be converted to number.
@@ -20,6 +22,16 @@ For example:
 		printf ("this will always be executed\n");
 	else
 		printf ("this will never\n");
+
+This is popular way of enumerating characters in a C-string:
+
+	char *input=...;
+
+	while(*input) // execute body if *input is non-zero
+	{
+		// do something with *input
+		input++;
+	};
 
 ## Nibble AKA nybble
 
@@ -324,8 +336,8 @@ Many debuggers is able to show the memory map of the debuggee, for example,
 If a value is increasing by step 4 on 32-bit architecture or by step 8 on 64-bit one,
 this probably sliding address of some element of array.
 
-It's important to know that win32 doesn't use addresses below 0x1000 (TODO), so if you see some number below this value,
-this cannot be an address.
+It's important to know that win32 doesn't use addresses below 0x10000 (TODO), so if you see some number below this value,
+this cannot be an address ([see also](https://msdn.microsoft.com/en-us/library/ms810627.aspx)).
 
 Anyway, many debuggers can show you if the value in a register can be an address to something.
 OllyDbg can also show an ASCII string if the value is an address of it.

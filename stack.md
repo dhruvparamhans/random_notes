@@ -1,3 +1,5 @@
+(The note below has been copypasted to the [Reverse Engineering for Beginners book](http://beginners.re/))
+
 # Accessing arguments/local variables of caller
 
 From C/C++ basics we know that this is impossible for a function to access arguments of caller function or its

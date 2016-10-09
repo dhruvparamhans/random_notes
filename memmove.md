@@ -1,3 +1,5 @@
+(The note below has been copypasted to the [Reverse Engineering for Beginners book](http://beginners.re/))
+
 # memmove() and memcpy()
 
 The difference between these standard functions is that *memcpy()* blindly copies a block to another place,

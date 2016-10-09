@@ -1,3 +1,5 @@
+(The note below has been copypasted to the [Reverse Engineering for Beginners book](http://beginners.re/))
+
 # High-score file in "Block out" game and primitive serialization
 
 Many videogames has high-score file, sometimes called "Hall of fame".

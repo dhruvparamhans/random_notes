@@ -1,3 +1,5 @@
+(The note below has been copypasted to the [Reverse Engineering for Beginners book](http://beginners.re/))
+
 # Unsized array in C structure
 
 In some win32 structures we can find ones with last element defined as one character:
