@@ -1473,17 +1473,22 @@ Perhaps, someone, who currently reading this article, may rush into extending my
 As an exercise, I would say, that the first step could be support of partial registers: i.e., AL, AX, EAX.
 This is tricky, but doable.
 
+Another task may be support of FPU x86 instructions (FPU stack modeling isn't a big deal).
+
 The gap between toy decompiler and decompiler like Hex-Rays is still enormous.
 Several tricky problems must be solved, at least these:
 
 \begin{itemize}
 \item C data types: arrays, structures, pointers, etc.
+This problem is virtually non-existent for JVM (Java, etc) and .NET decompilers, because type information
+is present in binary files.
 
 \item Basic blocks, C/C++ statements. Mike Van Emmerik in his thesis
 \footnote{\url{https://yurichev.com/mirrors/vanEmmerik_ssa.pdf}} shows how this can be tackled using \ac{SSA} forms
 (which are also heavily used in compilers).
 
 \item Memory support, incluing local stack. Keep in mind pointer aliasing problem.
+Again, decompilers of JVM and .NET files are simpler here.
 \end{itemize}
 
 \section{Further reading}
