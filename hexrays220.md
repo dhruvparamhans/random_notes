@@ -104,7 +104,7 @@ Result:
 v6 variable has "char" type and if you'll try to compile this code, compiler will warn you about variable
 usage before assignment.
 
-FPATAN instruction is correctly decompiled into atan2(), but arguments are incorrectly swapped.
+Another bug: FPATAN instruction is correctly decompiled into atan2(), but arguments are incorrectly swapped.
 
 ## Odd peculiarities
 
@@ -298,7 +298,11 @@ I've seen something like that in production code:
 	else
 		return global_var=789, 321; // 321 is returned
 
-Apparently, programmer wanted to make code slightly shorter without additional brackets.
+Apparently, programmer wanted to make code slightly shorter without additional curly brackets.
+In other words, comma allows to pack couple of expressions into one, without forming
+statement/code block inside of curly brackets.
+
+Comma in C/C++ is close to "begin" in Scheme/Racket: https://docs.racket-lang.org/guide/begin.html
 
 Perhaps, the only legitimate usage of comma is in for() statements:
 
