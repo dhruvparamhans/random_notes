@@ -29,5 +29,5 @@ Get SHA1 sum of list of sorted hashes:
 
 	find . -type f -print0  | xargs -0 sha1sum | cut -f 1 -d ' ' | sort | sha1sum
 
-This is very close to Merkle tree, it's how torrent hashes are calculated.
+This is very close to Merkle tree, it's how hash of a torrent is calculated.
 
