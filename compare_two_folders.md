@@ -1,4 +1,4 @@
-# How to be sure two folders has exactly the same contents?
+# How to be sure two folders have exactly the same contents?
 
 Get SHA1 sum of every file in the current tree:
 
@@ -13,7 +13,7 @@ Get SHA1 sum of every file in the current tree:
 	08c3b5df08f266c2972a631a6a3667055d34daa1  ./src.bak/patterns/02_stack/global_args.asm
 	da39a3ee5e6b4b0d3255bfef95601890afd80709  ./src.bak/patterns/02_stack/04_alloca/TODO_rework_listings
 
-Sort all hashes:
+Sort all the hashes:
 
 	find . -type f -print0  | xargs -0 sha1sum | cut -f 1 -d ' ' | sort
 
@@ -25,7 +25,7 @@ Sort all hashes:
 	fccca02b32b516f049d644cd7ae49189b2a991d7
 	fdc12789a1d8ed9b824d9684c4b0c1b3b4dd7cc8
 
-Get SHA1 sum of list of sorted hashes:
+Get SHA1 sum of the list of sorted hashes:
 
 	find . -type f -print0  | xargs -0 sha1sum | cut -f 1 -d ' ' | sort | sha1sum
 
