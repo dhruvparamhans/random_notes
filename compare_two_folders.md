@@ -4,6 +4,8 @@ Get SHA1 sum of every file in the current tree:
 
 	find . -type f -print0  | xargs -0 sha1sum
 
+	...
+
 	a58c2b2f2b1dad1ca0d8902fe43a9b2c97769d62  ./src.bak/patterns/11_arith_optimizations/mult_shifts_Keil_ARM_O3.s
 	0a91f5aa4f8ee143dba531b21404c0968e96f7de  ./src.bak/patterns/11_arith_optimizations/exercises.tex
 	2c41af9373f05675351f0b8e550bdba16cbb7d20  ./src.bak/patterns/11_arith_optimizations/div_EN.tex
@@ -28,6 +30,9 @@ Sort all the hashes:
 Get SHA1 sum of the list of sorted hashes:
 
 	find . -type f -print0  | xargs -0 sha1sum | cut -f 1 -d ' ' | sort | sha1sum
+
+This is how we getting hash of the whole directory, which can be compared with other.
+Sort must be performed, because files of two equal directories can be listed in different order.
 
 This is very close to Merkle tree, it's how hash of a torrent is calculated.
 
