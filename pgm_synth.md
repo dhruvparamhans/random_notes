@@ -55,16 +55,16 @@ and the second to multiplier.
 Let's also take a look into "magic block" inside:
 
 
-	               op1_reg         op
-		          |            v
-			  v          +-----+
+	                op1_reg         op
+	                   |            v
+	                   v         +-----+
 	registers ---> selector1 --> | ADD |
-        	   +                 | SUB | ---> result
-		   |                 | SHL |
-		   +-> selector2 --> +-----+
-                	  ^             ^
-			  |             |
-        	       op2_reg       op2_imm
+	           +                 | SUB | ---> result
+	           |                 | SHL |
+	           +-> selector2 --> +-----+
+	                  ^             ^
+	                  |             |
+	               op2_reg       op2_imm
 
 Each selector can be viewed as simple multipositional switch.
 If operation is SHL, a value in range of 1..31 is used as second operand.
