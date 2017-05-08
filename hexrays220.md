@@ -104,7 +104,7 @@ Result:
 v6 variable has "char" type and if you'll try to compile this code, compiler will warn you about variable
 usage before assignment.
 
-Another bug: FPATAN instruction is correctly decompiled into atan2(), but arguments are incorrectly swapped.
+Another bug: FPATAN instruction is correctly decompiled into atan2(), but arguments are swapped.
 
 ## Odd peculiarities
 
@@ -238,7 +238,7 @@ Result:
 	}
 
 v2 variable (from ECX) is lost...
-Yes, this code is incorrect, but it would be great for Hex-Rays to give a warning.
+Yes, this code is incorrect, but it would be good for Hex-Rays to give a warning.
 
 Another one:
 
@@ -336,11 +336,13 @@ If cond2 is true, again, if() body is executed, if it's not, body isn't executed
 In other words, if() body gets executed if cond1 is true or cond2 is true, but if the latter is true,
 comma\_expr is also executed.
 
+A common beginner's misconception is that sub-conditions are checked in some unspecified order, which is not true.
+
 Now you can see why comma is so notorious.
 
 ## Data types
 
-Data types is problem for decompilers.
+Data types is a problem for decompilers.
 
 Hex-Rays can be blind to arrays in local stack, if they weren't set correctly before decompilation.
 Same story about global arrays.
@@ -366,6 +368,6 @@ recompile it and feed to Hex-Rays again.
 
 ## Summary
 
-Quality of Hex-Rays 2.2.0 is very, very good.
+Nevertheless, quality of Hex-Rays 2.2.0 is very, very good.
 It makes life way easier.
 

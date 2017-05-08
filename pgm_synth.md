@@ -1,3 +1,5 @@
+(The note below has been copypasted to the [my article about SAT/SMT](https://yurichev.com/tmp/SAT_SMT_DRAFT.pdf))
+
 # Simple program synthesis using Z3 SMT-solver
 
 Sometimes, multiplication operation can be replaced with couple of shifting/addition/subtraction operations.
@@ -5,6 +7,7 @@ Compilers do so, because pack of instructions can be faster than multiplication 
 
 For example, multiplication by 19 is replaced by GCC 5.4 with pair of instructions: `lea edx, [eax+eax*8]` and
 `lea eax, [eax+edx*2]`.
+This is sometimes also called "superoptimization".
 
 Let's see if we can find a shortest possible instructions pack for some specified multiplier.
 

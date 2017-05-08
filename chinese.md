@@ -12,6 +12,7 @@
 * http://www.dbgpro.com/archives/514.html
 * http://www.itwendao.com/article/detail/210895.html
 * http://blog.csdn.net/r1ce_mars/article/details/53940242
+* http://www.dbgpro.com/archives/538.html
 
 Previous attempt: [single HTML file](https://beginners.re/RE4B-CN-partial/html/RE4B-CN-partial.html), [epub](https://beginners.re/RE4B-CN-partial/epub/RE4B-CN-partial.epub).
 

@@ -66,6 +66,9 @@
 
 \section{Introduction}
 
+!!! The following article has been copypasted to the my article about SAT/SMT: \url{https://yurichev.com/tmp/SAT_SMT_DRAFT.pdf}.\\
+\\
+\\
 A modern-day compiler is a product of hundreds of developer/year.
 At the same time, toy compiler can be an exercise for a student for a week (or even weekend).
 
@@ -159,6 +162,9 @@ The conversion expression we just saw will be represented as:
 	('EXPR_VALUE', 5)), 
 ('EXPR_VALUE', 9))
 \end{lstlisting}
+
+In fact, this is AST (Abstract Syntax Tree) in its simplest form.
+ASTs are heavily used in compilers.
 
 \section{Simple examples}
 
@@ -1111,16 +1117,16 @@ Now let's add some fake luggage to fahrenheit-to-celsius example:
 
 \begin{lstlisting}
         ; celsius = 5 * (fahr-32) / 9
-        ; false luggage:
+        ; fake luggage:
         mov     rbx, 12345h
         mov     rax, rdi
         sub     rax, 32
-        ; false luggage:
+        ; fake luggage:
         add     rbx, rax
         imul    rax, 5
         mov     rbx, 9
         idiv    rbx
-        ; false luggage:
+        ; fake luggage:
         sub     rdx, rax
 \end{lstlisting}
 
@@ -1132,19 +1138,19 @@ We can try to pretend we affect result with noise:
 
 \begin{lstlisting}
         ; celsius = 5 * (fahr-32) / 9
-        ; false luggage:
+        ; fake luggage:
         mov     rbx, 12345h
         mov     rax, rdi
         sub     rax, 32
-        ; false luggage:
+        ; fake luggage:
         add     rbx, rax
         imul    rax, 5
         mov     rbx, 9
         idiv    rbx
-        ; false luggage:
+        ; fake luggage:
         sub     rdx, rax
         mov     rcx, rax
-        ; OR result with garbage (result of false luggage):
+        ; OR result with garbage (result of fake luggage):
         or      rcx, rdx
         ; the following instruction shouldn't affect result:
         and     rax, rcx
@@ -1242,7 +1248,7 @@ def do_selftest(old, new):
 \end{lstlisting}
 
 In fact, this is very close to what LISP \textit{EVAL} function does, or even LISP interpreter.
-However, not all symbols are filled.
+However, not all symbols are set.
 If the code is using initial RAX or RBX (to which symbols ``initial\_RAX'' and ``initial\_RBX'' are assigned,
 decompiler will stopped with exception, because no random values assigned to these registers,
 and these symbols are absent in \textit{symbols} dictionary.
@@ -1429,7 +1435,7 @@ Python version, not strings as a whole. So strings in Python can be seen as poss
 \subsection{Even simpler toy decompiler}
 
 Knowledge of LISP makes you understand all these things naturally, without significant effort.
-But when I had no knowledge of it, but I still tried to make simple toy decompiler, I made it using usual text strings
+But when I had no knowledge of it, but still tried to make a simple toy decompiler, I made it using usual text strings
 which holded expressions for each registers (and even memory).
 
 So when MOV instruction copies value from one register to another, we just copy string.

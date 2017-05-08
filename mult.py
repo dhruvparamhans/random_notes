@@ -73,9 +73,9 @@ def selftest(m, STEPS, op, op1_reg, op2_reg, op2_imm):
     result1=eval_chain(1, m, STEPS, op, op1_reg, op2_reg, op2_imm)
     result123=eval_chain(123, m, STEPS, op, op1_reg, op2_reg, op2_imm)
     if 0*multiplier==result0 and 1*multiplier==result1 and 123*multiplier==result123:
-        print "tests are OK"
+        print "tests are passed"
     else:
-        print "tests are NOT OK"
+        print "tests are NOT passed"
         print "result0",result0
         print "result1",result1
         print "result123",result123
