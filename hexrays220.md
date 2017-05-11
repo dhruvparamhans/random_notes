@@ -1,3 +1,5 @@
+(The note below has been copypasted to the [Reverse Engineering for Beginners book](http://beginners.re/))
+
 # My experience with Hex-Rays 2.2.0
 
 ## Bugs
@@ -304,7 +306,7 @@ statement/code block inside of curly brackets.
 
 Comma in C/C++ is close to "begin" in Scheme/Racket: https://docs.racket-lang.org/guide/begin.html
 
-Perhaps, the only legitimate usage of comma is in for() statements:
+Perhaps, the only widely accepted usage of comma is in for() statements:
 
 	char *s="hello, world";
 	for(int i=0; *s; s++, i++);
