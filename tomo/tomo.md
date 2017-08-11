@@ -163,6 +163,8 @@ That works:
 	    **
 	   ****
 
+In other words, all SMT-solver does here is solving a system of equations.
+
 So, 4 angles are enough.
 What if we could use only 3 angles?
 
