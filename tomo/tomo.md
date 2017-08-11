@@ -228,3 +228,4 @@ Further reading:
 [1](https://en.wikipedia.org/wiki/Discrete_tomography)
 [2](https://en.wikipedia.org/wiki/2-satisfiability#Discrete_tomography).
 
+My other notes about SAT/SMT are [here](https://yurichev.com/writings/SAT_SMT_draft-EN.pdf) and in [my blog](https://yurichev.com/blog/).
