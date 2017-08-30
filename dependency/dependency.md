@@ -98,3 +98,5 @@ Next, there will be vertices dependend on vertices from the previous layer. And 
 Even more: older "make" utilities offloaded the job to the external utility ("tsort").
 Some older UNIX has it, [at least some versions of NetBSD](http://netbsd.gw.com/cgi-bin/man-cgi/man?tsort+1+NetBSD-current).
 
+My other notes about SAT/SMT are [here](https://yurichev.com/writings/SAT_SMT_draft-EN.pdf) and in [my blog](https://yurichev.com/blog/).
+
