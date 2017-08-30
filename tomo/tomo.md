@@ -1,5 +1,7 @@
 # Discrete tomography and Z3 SMT-solver
 
+(The note below has been copypasted to the [my article about SAT/SMT](https://yurichev.com/tmp/SAT_SMT_DRAFT.pdf))
+
 How computed tomography (CT scan) actually works?
 A body is bombarded by X-rays in various angles by X-ray tube in rotating torus.
 X-ray detectors are also located in torus, and all the information is recorded.
