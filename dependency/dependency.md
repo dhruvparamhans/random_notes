@@ -1,5 +1,7 @@
 # Dependency hell and Z3 SMT-solver
 
+(The note below has been copypasted to the [my article about SAT/SMT](https://yurichev.com/tmp/SAT_SMT_DRAFT.pdf))
+
 Here is simplified example:
 
 	#!/usr/bin/env python
