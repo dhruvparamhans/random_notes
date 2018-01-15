@@ -1,4 +1,4 @@
-# Donald Knuth's usage of comma in C
+# Donald Knuth's usage of comma in C (would work for C++ as well)
 
 Yet another hack (or trick).
 How would you count memory accesses your code do?
