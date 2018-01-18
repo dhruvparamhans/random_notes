@@ -1,6 +1,7 @@
 Another problem from [http://artofproblemsolving.com](http://artofproblemsolving.com/wiki/index.php?title=2017_AMC_12A_Problems/Problem_2):
 
-	The sum of two nonzero real numbers is 4 times their product. What is the sum of the reciprocals of the two numbers? 
+	The sum of two nonzero real numbers is 4 times their product.
+	What is the sum of the reciprocals of the two numbers? 
 
 We're going to solve this over real numbers:
 
