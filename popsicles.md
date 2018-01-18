@@ -1,6 +1,7 @@
 Found this problem at [artofproblemsolving.com](http://artofproblemsolving.com/wiki/index.php?title=2017_AMC_12A_Problems/Problem_1).
 
-	Pablo buys popsicles for his friends. The store sells single popsicles for $1 each, 3-popsicle boxes for $2, and 5-popsicle boxes for $3. What is the greatest number of popsicles that Pablo can buy with $8? 
+	Pablo buys popsicles for his friends. The store sells single popsicles for $1 each, 3-popsicle boxes for $2,
+	and 5-popsicle boxes for $3. What is the greatest number of popsicles that Pablo can buy with $8? 
 
 This is optimization problem, and the solution using z3:
 
