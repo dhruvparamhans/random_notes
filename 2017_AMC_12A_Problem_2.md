@@ -14,7 +14,7 @@ We're going to solve this over real numbers:
 	s.add(x>0)
 	s.add(y>0)
 
-	s.add(x+y == 4*x*)
+	s.add(x+y == 4*x*y)
 
 	print s.check()
 	m=s.model()
