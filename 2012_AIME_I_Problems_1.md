@@ -3,7 +3,8 @@
 From http://artofproblemsolving.com/wiki/index.php?title=2012_AIME_I_Problems/Problem_1
 
 ```
-Find the number of positive integers with three not necessarily distinct digits, $abc$, with $a \neq 0$ and $c \neq 0$ such that both $abc$ and $cba$ are multiples of $4$.
+Find the number of positive integers with three not necessarily distinct digits,
+$abc$, with $a \neq 0$ and $c \neq 0$ such that both $abc$ and $cba$ are multiples of $4$.
 ```
 
 ```python
