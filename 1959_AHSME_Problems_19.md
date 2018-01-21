@@ -108,6 +108,6 @@ left:           obj_w=10     | right:  w1    w9
 left:           obj_w= 1     | right:  w1
 left:  w1       obj_w= 8     | right:        w9
 total results 26
-...
+```
 
 There are 13 distinct obj_w values. So this is an answer.
