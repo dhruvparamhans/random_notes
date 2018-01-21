@@ -110,4 +110,4 @@ left:  w1       obj_w= 8     | right:        w9
 total results 26
 ```
 
-There are 13 distinct obj_w values. So this is an answer.
+There are 13 distinct obj_w values. So this is the answer.
