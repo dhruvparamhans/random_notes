@@ -50,7 +50,19 @@ results=[]
 while True:
     if s.check() == sat:
         m = s.model()
-        print m
+        #print m
+        print "left: ",
+        print ("w1" if m[w1].as_long()==1 else "  "),
+        print ("w3" if m[w3].as_long()==1 else "  "),
+        print ("w9" if m[w9].as_long()==1 else "  "),
+        print (("obj_w=%2d" % m[obj_w].as_long()) if m[obj].as_long()==1 else "        "),
+
+        print "    | right: ",
+        print ("w1" if m[w1].as_long()==2 else "  "),
+        print ("w3" if m[w3].as_long()==2 else "  "),
+        print ("w9" if m[w9].as_long()==2 else "  "),
+        print (("obj_w=%2d" % m[obj_w].as_long()) if m[obj].as_long()==2 else "        "),
+        print ""
 
         results.append(m)
         block = []
@@ -69,59 +81,33 @@ while True:
 Output:
 
 ```
-...
-[w1 = 0,
- w3 = 0,
- w9 = 2,
- obj = 1,
- obj_w = 9,
- right = 9,
- left = 9]
-[w1 = 2,
- w3 = 0,
- w9 = 2,
- obj = 1,
- obj_w = 10,
- right = 10,
- left = 10]
-[w1 = 2,
- w3 = 0,
- w9 = 0,
- obj = 1,
- obj_w = 1,
- right = 1,
- left = 1]
-[w1 = 1,
- w3 = 0,
- w9 = 2,
- obj = 1,
- obj_w = 8,
- right = 9,
- left = 9]
+left:     w3                 | right:  w1       obj_w= 2
+left:     w3    obj_w= 7     | right:  w1    w9
+left:     w3 w9              | right:  w1       obj_w=11
+left:     w3    obj_w= 6     | right:        w9
+left:  w1 w3    obj_w= 5     | right:        w9
+left:     w3 w9              | right:           obj_w=12
+left:  w1 w3 w9              | right:           obj_w=13
+left:  w1 w3                 | right:           obj_w= 4
+left:     w3                 | right:           obj_w= 3
+left:           obj_w= 4     | right:  w1 w3
+left:           obj_w=13     | right:  w1 w3 w9
+left:           obj_w= 3     | right:     w3
+left:  w1       obj_w= 2     | right:     w3
+left:  w1       obj_w=11     | right:     w3 w9
+left:           obj_w=12     | right:     w3 w9
+left:  w1                    | right:           obj_w= 1
+left:        w9              | right:  w1       obj_w= 8
+left:        w9              | right:           obj_w= 9
+left:  w1    w9              | right:           obj_w=10
+left:  w1    w9              | right:     w3    obj_w= 7
+left:        w9              | right:  w1 w3    obj_w= 5
+left:        w9              | right:     w3    obj_w= 6
+left:           obj_w= 9     | right:        w9
+left:           obj_w=10     | right:  w1    w9
+left:           obj_w= 1     | right:  w1
+left:  w1       obj_w= 8     | right:        w9
 total results 26
-```
+...
 
-Let's grep for object's weights:
-```
- obj_w = 1,
- obj_w = 10,
- obj_w = 11,
- obj_w = 12,
- obj_w = 13,
- obj_w = 2,
- obj_w = 3,
- obj_w = 4,
- obj_w = 5,
- obj_w = 6,
- obj_w = 7,
- obj_w = 8,
- obj_w = 9,
-```
-
-And how many of them are there?
-
-```
-% python 6.py | grep obj_w | sort | uniq | wc -l
-13
-```
-
+There are 13 distinct obj_w values. So this is an answer.
