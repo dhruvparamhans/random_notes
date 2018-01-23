@@ -62,7 +62,7 @@ Out[]= 1/705600000
 
 Rationale: you may want to play video with 1/50 fps and, simultaneously, play audio with 96kHz sampling rate.
 Given that, you can change video frame after each 14112000 flicks and change one audio sample after each 7350 flicks.
-Use any video fps and any audio sampling rate and you will have all time periods as integer numbers.
+Use any other video fps and any audio sampling rate and you will have all time periods as integer numbers.
 No ratios any more.
 
 On contrary, one nanosecond wouldn't fit.
