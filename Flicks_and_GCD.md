@@ -67,3 +67,5 @@ No ratios any more.
 
 On contrary, one nanosecond wouldn't fit.
 
+More about GCD: https://yurichev.com/blog/GCD/
+
