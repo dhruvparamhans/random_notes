@@ -7,17 +7,22 @@ A flick (frame-tick) is a very small unit of time. It is 1/705600000 of a second
 
 1 flick = 1/705600000 second
 
-This unit of time is the smallest time unit which is LARGER than a nanosecond, and can in integer quantities exactly represent
-a single frame duration for 24hz, 25hz, 30hz, 48hz, 50hz, 60hz, 90hz, 100hz, 120hz, and also 1/1000 divisions of each.
-This makes it suitable for use via std::chrono::duration and std::ratio for doing timing work against the system
-high resolution clock, which is in nanoseconds, but doesn't get slightly out of sync when doing common frame rates.
+This unit of time is the smallest time unit which is LARGER than a nanosecond,
+and can in integer quantities exactly represent a single frame duration for 
+24hz, 25hz, 30hz, 48hz, 50hz, 60hz, 90hz, 100hz, 120hz, and also 1/1000 divisions of each.
+This makes it suitable for use via std::chrono::duration and std::ratio 
+for doing timing work against the system high resolution clock, which is in nanoseconds,
+but doesn't get slightly out of sync when doing common frame rates.
 
-In order to accomodate media playback, we also support some common audio sample rates as well. This list is not exhaustive, 
-but covers the majority of digital audio formats. They are 8kHz, 16kHz, 22.05kHz, 24kHz, 32kHz, 44.1kHz, 48kHz, 88.2kHz, 96kHz, and 192kHz. 
-While humans can't hear higher than 48kHz, the higher sample rates are used for working audio files which might later be resampled or retimed.
+In order to accomodate media playback, we also support some common audio sample rates as well.
+This list is not exhaustive, but covers the majority of digital audio formats.
+They are 8kHz, 16kHz, 22.05kHz, 24kHz, 32kHz, 44.1kHz, 48kHz, 88.2kHz, 96kHz, and 192kHz. 
+While humans can't hear higher than 48kHz, the higher sample rates are used 
+for working audio files which might later be resampled or retimed.
 
-The NTSC variations (~29.97, etc) are actually defined as 24 * 1000/1001 and 30 * 1000/1001, which are impossible 
-to represent exactly in a way where 1 second is exact, so we don't bother - they'll be inexact in any circumstance.
+The NTSC variations (~29.97, etc) are actually defined as 24 * 1000/1001 and 
+30 * 1000/1001, which are impossible to represent exactly in a way where 1 second is exact,
+so we don't bother - they'll be inexact in any circumstance.
 
 Details
 
@@ -59,4 +64,6 @@ Rationale: you may want to play video with 1/50 fps and, simultaneously, play au
 Given that, you can change video frame after each 14112000 flicks and change one audio sample after each 7350 flicks.
 Use any video fps and any audio sampling rate and you will have all time periods as integer numbers.
 No ratios any more.
+
+On contrary, one nanosecond wouldn't fit.
 
