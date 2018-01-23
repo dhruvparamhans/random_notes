@@ -65,7 +65,7 @@ Given that, you can change video frame after each 14112000 flicks and change one
 Use any other video fps and any audio sampling rate and you will have all time periods as integer numbers.
 No ratios any more.
 
-On contrary, one nanosecond wouldn't fit: try to represent 1/30 fps in nanoseconds, this is ratio: 33333.33333..., etc.
+On contrary, one nanosecond wouldn't fit: try to represent 1/30 fps in nanoseconds, this is ratio: 33333.33333... nanoseconds.
 
 More about GCD: https://yurichev.com/blog/GCD/
 
