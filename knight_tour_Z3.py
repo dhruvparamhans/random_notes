@@ -109,6 +109,11 @@ s.add(Distinct(V))
 # first cell:
 s.add(V[0]==BitVecVal(1, L))
 
+# can create expression like:
+# If(selector=c1, val[0], 
+# If(selector=c2, val[1], 
+# If(selector=c3, val[2], 
+# If(selector=c4, val[3], val[4]))))
 def MUX(selector, selectors, vals):
     assert len(selectors)+1 == len(vals)
     l=len(vals)
