@@ -128,7 +128,7 @@ for i in range(L):
     # https://github.com/Z3Prover/z3/blob/master/examples/python/hamiltonian/hamiltonian.py
     e=MUX(sel, range(len(or_list)-1), or_list)
     """
-    at this point e can looks like:
+    at this point e can look like:
 
     54 If(sel54 == 2,
        RotateLeft(V_60, 1),
