@@ -124,7 +124,7 @@ for i in range(L):
     for j in G[i]:
         or_list.append(RotateLeft(V[j], 1))
     sel=Int('sel%d' % i)
-    # no idea why, but using multiplexer is faster than chain of Or's in 
+    # no idea why, but using multiplexer is faster than chain of Or's as in 
     # https://github.com/Z3Prover/z3/blob/master/examples/python/hamiltonian/hamiltonian.py
     e=MUX(sel, range(len(or_list)-1), or_list)
     """
