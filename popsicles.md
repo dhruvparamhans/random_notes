@@ -36,3 +36,5 @@ And the solution:
 	 pop_total = 13,
 	 box1pop = 0]
 
+This is almost the same as https://en.wikipedia.org/wiki/Knapsack_problem
+
