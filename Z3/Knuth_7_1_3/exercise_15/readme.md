@@ -1,4 +1,4 @@
-# Exercise 15 from TAOCP 7.1.3 Bitwise tricks and techniques.
+# Exercise 15 from TAOCP "7.1.3 Bitwise tricks and techniques": solving it using Z3
 
 ![screenshot](https://raw.githubusercontent.com/DennisYurichev/random_notes/master/Z3/Knuth_7_1_3/exercise_15/page53.png)
 
