@@ -1,6 +1,6 @@
 # Exercise 56 from TAOCP "7.1.1 Boolean Basics", solving it using Z3.
 
-Page41 from fasc0b.ps or http://www.cs.utsa.edu/~wagner/knuth/fasc0b.pdf
+Page 41 from fasc0b.ps or http://www.cs.utsa.edu/~wagner/knuth/fasc0b.pdf
 
 ![screenshot](https://raw.githubusercontent.com/DennisYurichev/random_notes/master/Z3/Knuth_7_1_1/exercise_56/fasc0b_page41.png)
 
