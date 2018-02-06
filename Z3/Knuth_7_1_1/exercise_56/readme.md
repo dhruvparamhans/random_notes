@@ -2,7 +2,7 @@
 
 Page41 from fasc0b.ps or http://www.cs.utsa.edu/~wagner/knuth/fasc0b.pdf
 
-!(screenshot)[https://raw.githubusercontent.com/DennisYurichev/random_notes/master/Z3/Knuth_7_1_1/exercise_56/fasc0b_page41.png]
+![screenshot](https://raw.githubusercontent.com/DennisYurichev/random_notes/master/Z3/Knuth_7_1_1/exercise_56/fasc0b_page41.png)
 
 For exists/forall/forall:
 
