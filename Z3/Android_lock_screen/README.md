@@ -1,4 +1,6 @@
-# Anroid lock screen (9 dots) has 10296 possible ways to (un)lock it
+# Anroid lock screen (9 dots) has 140240 possible ways to (un)lock it
+
+(Bugfix, thanks to @mztropics)
 
 How would you count?
 
@@ -15,16 +17,21 @@ from z3 import *
 # next dot can only be a neighbour
 # here we define starlike connections between dots (as in Android lock screen)
 # this is like switch() or multiplexer
+
+# lines like these are also counted:
+# * . .
+# . . *
+# . * .
 def next_dot(a, b):
-    return If(a==1, Or(b==2, b==4, b==5),
-        If(a==2, Or(b==1, b==3, b==4, b==5, b==6),
-        If(a==3, Or(b==2, b==5, b==6),
-        If(a==4, Or(b==1, b==2, b==5, b==7, b==8),
+    return If(a==1, Or(b==2, b==4, b==5, b==6, b==8),
+        If(a==2, Or(b==1, b==3, b==4, b==5, b==6, b==7, b==9),
+        If(a==3, Or(b==2, b==5, b==6, b==4, b==8),
+        If(a==4, Or(b==1, b==2, b==5, b==7, b==8, b==3, b==9),
         If(a==5, Or(b==1, b==2, b==3, b==4, b==6, b==7, b==8, b==9),
-        If(a==6, Or(b==2, b==3, b==5, b==8, b==9),
-        If(a==7, Or(b==4, b==5, b==8),
-        If(a==8, Or(b==4, b==5, b==6, b==7, b==9),
-        If(a==9, Or(b==5, b==6, b==8),
+        If(a==6, Or(b==2, b==3, b==5, b==8, b==9, b==1, b==7),
+        If(a==7, Or(b==4, b==5, b==8, b==2, b==6),
+        If(a==8, Or(b==4, b==5, b==6, b==7, b==9, b==1, b==3),
+        If(a==9, Or(b==5, b==6, b==8, b==4, b==2),
             False))))))))) # default
 
 # if only non-diagonal lines between dots are allowed:
@@ -39,6 +46,25 @@ def next_dot(a, b):
         If(a==7, Or(b==4, b==8),
         If(a==8, Or(b==5, b==7, b==9),
         If(a==9, Or(b==6, b==8),
+            False))))))))) # default
+"""
+
+# old version, hasn't counted lines like
+# * . .
+# . . *
+# . * .
+
+"""
+def next_dot(a, b):
+    return If(a==1, Or(b==2, b==4, b==5),
+        If(a==2, Or(b==1, b==3, b==4, b==5, b==6),
+        If(a==3, Or(b==2, b==5, b==6),
+        If(a==4, Or(b==1, b==2, b==5, b==7, b==8),
+        If(a==5, Or(b==1, b==2, b==3, b==4, b==6, b==7, b==8, b==9),
+        If(a==6, Or(b==2, b==3, b==5, b==8, b==9),
+        If(a==7, Or(b==4, b==5, b==8),
+        If(a==8, Or(b==4, b==5, b==6, b==7, b==9),
+        If(a==9, Or(b==5, b==6, b==8),
             False))))))))) # default
 """
 
@@ -93,6 +119,7 @@ for l in range(2,10):
     total=total+paths_for_length(l)
 
 print "total=", total
+
 ```
 
 Sample paths of 7 elements:
@@ -150,20 +177,20 @@ path [9, 6, 8, 7, 4, 1, 5, 2, 3]
 ...
 ```
 
-All possible paths: https://github.com/DennisYurichev/random_notes/blob/master/Z3/Android_lock_screen/starlike (~500k file).
+All possible paths: https://github.com/DennisYurichev/random_notes/blob/master/Z3/Android_lock_screen/all.bz2
 
 Statistics:
 
 ```
-length= 2 results total= 40
-length= 3 results total= 160
-length= 4 results total= 496
-length= 5 results total= 1208
-length= 6 results total= 2240
-length= 7 results total= 2984
-length= 8 results total= 2384
-length= 9 results total= 784
-total= 10296
+length= 2 results total= 56
+length= 3 results total= 304
+length= 4 results total= 1400
+length= 5 results total= 5328
+length= 6 results total= 16032
+length= 7 results total= 35328
+length= 8 results total= 49536
+length= 9 results total= 32256
+total= 140240
 ```
 
 What if only non-diagonal lines would be allowed (which isn't a case of a real Android lock screen)?
@@ -180,7 +207,27 @@ length= 9 results total= 40
 total= 644
 ```
 
-All possible non-diagonal paths: https://github.com/DennisYurichev/random_notes/blob/master/Z3/Android_lock_screen/nondiagonal
+Also, at first, when I published this note, lines like these weren't counted (but allowable on Andoird lock screen, as it was pointed out by @mztropics):
 
-Obviously, it's hard to bruteforce all them on a real smartphone/tablet, but nevertheless, it was fun to learn about it, at first, I though these numbers should be much bigger.
+```
+* . .
+. . *
+. * .
+```
+
+And the [incorrect] statistics was like this:
+
+```
+length= 2 results total= 40
+length= 3 results total= 160
+length= 4 results total= 496
+length= 5 results total= 1208
+length= 6 results total= 2240
+length= 7 results total= 2984
+length= 8 results total= 2384
+length= 9 results total= 784
+total= 10296
+```
+
+Now you can see, how drastically number of all possibilities can change, when you add ~2 more branches at each element of path.
 
