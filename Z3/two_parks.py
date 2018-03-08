@@ -72,9 +72,12 @@ SMT solver is overkill for the job, but perfect for illustration and helping in 
 
 Variations of the problem from the same book:
 
-"Suppose that 100 senators voted on three separate senate bills as follows: 70 percent of the senators voted for the first bill, 65 percent voted for the second bill, and 60 percent voted for the third bill. At least what percentage of the senators voted for all three bills?"
+"Suppose that 100 senators voted on three separate senate bills as follows:
+70 percent of the senators voted for the first bill, 65 percent voted for the second bill,
+and 60 percent voted for the third bill. At least what percentage of the senators voted for all three bills?"
 
-"Suppose that 25 people attended a conference with three sessions, where 15 people attended the first session, 18 the second session, and 12 the third session. At least how many people attended all three sessions?"
+"Suppose that 25 people attended a conference with three sessions, where 15 people attended the first session, 
+18 the second session, and 12 the third session. At least how many people attended all three sessions?"
 
 """
 
