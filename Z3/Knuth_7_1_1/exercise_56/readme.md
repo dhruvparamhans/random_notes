@@ -6,7 +6,7 @@ Page 41 from fasc0b.ps or http://www.cs.utsa.edu/~wagner/knuth/fasc0b.pdf
 
 For exists/forall/forall:
 
-```python
+```
 (assert
         (exists ((x Bool)) (forall ((y Bool)) (forall ((z Bool))
                 (and
