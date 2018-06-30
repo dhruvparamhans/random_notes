@@ -90,7 +90,7 @@ s.add(Jxx_3_size==Jxx_size(Jxx_3_offset))
 s.add(Jxx_4_size==Jxx_size(Jxx_4_offset))
 s.add(Jxx_5_size==Jxx_size(Jxx_5_offset))
 
-# minimize sizes of all jumps (this is optimization problem):
+# minimize size of all jumps (this is optimization problem):
 s.minimize(Jxx_1_size + Jxx_2_size + Jxx_3_size + Jxx_4_size + Jxx_5_size)
 
 print s.check()
