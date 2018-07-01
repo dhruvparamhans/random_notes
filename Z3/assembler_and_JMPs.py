@@ -5,7 +5,7 @@ from z3 import *
 Choosing between short/long jumps in x86 assembler using Z3 SMT-solver
 
 As you may know, there are two JMP instructions in x86: short one (EB xx) and long one (E9 xx xx xx xx).
-The first can encode offsets [current_address-127 ... current_address+128], the second can encode 32-bit offset.
+The first can encode "short offsets": [current_address-127 ... current_address+128], the second can encode 32-bit offset.
 During assembling (converting assembly code into machine opcodes) you can put "long" JMPs, and it's OK.
 But here is a problem: you may want to make your code as tight as possible and use "short" JMPs whenever possible.
 Given the fact that JMPs are inside code itself and affecting code size.
