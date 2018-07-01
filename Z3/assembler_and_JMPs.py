@@ -8,6 +8,7 @@ As you may know, there are two JMP instructions in x86: short one (EB xx) and lo
 The first can encode offsets [current_address-127 ... current_address+128], the second can encode 32-bit offset.
 During assembling (converting assembly code into machine opcodes) you can put "long" JMPs, and it's OK.
 But here is a problem: you may want to make your code as tight as possible and use "short" JMPs whenever possible.
+Given the fact that JMPs are inside code itself and affecting code size.
 What can you do?
 
 This is an example of some assembly program:
