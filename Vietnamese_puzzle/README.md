@@ -12,7 +12,7 @@ This is a simple equation. It's not specified if the numbers must be distinct, h
 
 Some of:
 
-``
+```
 3 4 8 7 6 2 1 9 5
 9 8 3 2 4 7 6 1 5
 3 1 9 8 6 7 5 4 2
@@ -29,7 +29,7 @@ Some of:
 
 ...
 
-``
+```
 
 The problem is easy enough to be solved my [toy-level MK85 SMT solver](https://github.com/DennisYurichev/MK85).
 
