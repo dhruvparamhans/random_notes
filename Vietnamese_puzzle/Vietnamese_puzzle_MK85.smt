@@ -23,11 +23,6 @@
 
 (assert (distinct a b c d e f g h i))
 
-;(assert (= a (_ bv6 16)))
-;(assert (= b (_ bv9 16)))
-;(assert (= c (_ bv3 16)))
-;(assert (= d (_ bv5 16)))
-
 ; a + 13*b/c + d + 12*e - f - 11 + g*h/i - 10 == 66
 
 (assert (=
